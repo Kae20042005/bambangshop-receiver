@@ -95,3 +95,11 @@ harus menggunakan tipe yang thread-safe seperti RwLock. <br />
 
 #### Reflection Subscriber-2
 
+1) Sudah, lib.rs merupakan berkas konfigurasi dan utilitas inti untu aplikasi web Rust berbasis Rocket. Pada file tersebut
+ada beberapa hal seperti pengaturan global constans & client ada lazy static, kongifurasi apllikasi pada AppConfig,
+konfigurasi awal untuk AppConfig dengan impl Default, dan custom error handling. <br />
+2) Observer pattern membantu memisahkan antar publisher dan subscriber. Dengan ini, subscriber dapat langsung mendaftarkan
+diri dengan fungsi subscribe saja. Apabila diberlakukan multiple instance pada MainApp, akan lebih sulit untuk gabung ke
+sistem karena penggunaan Vec sebagai penyimpanan yang mana melayani dengan single thread. <br />
+3) Ya, pembuatan test sendiri pada postman sangat membantu saya dalam memeriksa apakah request yang saya kirim ke aplikasi
+telah diproses dengan baik atau belum.
